@@ -1,14 +1,26 @@
-# Culture of Business — Static React mockup
+Culture of Business - Minimal React App
 
-This repository contains a small static React site (no build step) intended for publishing to GitHub Pages at `cultureofbusiness.github.io`.
+Quick local dev instructions
 
-How it works
-- `index.html` loads React and ReactDOM from CDN and renders a single-file React app. No bundler required.
-- `css/styles.css` contains styling to match the provided mockup image.
+1. Install dependencies
 
-To publish
-1. Ensure this repository is pushed to `https://github.com/cultureofbusiness/cultureofbusiness.github.io` on the `main` branch.
-2. In the repository Settings → Pages, choose the `main` branch and root folder as the publishing source.
-3. GitHub will publish the site at `https://cultureofbusiness.github.io/`.
+```bash
+npm install
+```
 
-If you prefer a build-based React setup (create-react-app / Vite), I can convert this later.
+2. Start dev server
+
+```bash
+npm run dev
+```
+
+3. Open the URL printed by Vite (usually `http://localhost:5173`).
+
+Pages
+- `/` - Home page with intro, article list, and black-box group photo placeholder
+- `/about` - About page with lorem ipsum
+- `/articles` - List of articles
+- `/articles/april` `/articles/may` etc. - Article pages filled with lorem ipsum
+
+Notes
+- This is a minimal static scaffold using Vite + React. No backend.
