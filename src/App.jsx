@@ -8,13 +8,14 @@ import Article from './pages/Article'
 export default function App() {
   return (
     <div className="site">
-      <header className="site-header">
-        <h1 className="site-title">Culture of Business</h1>
-        <nav className="site-nav">
+      <header className="site-header a24-header">
+        <nav className="site-nav a24-nav">
           <Link to="">Home</Link>
           <Link to="about">About Us</Link>
           <Link to="articles">Article List</Link>
         </nav>
+        <div className="site-title a24-title">Culture of Business</div>
+        <div className="a24-header-right" />
       </header>
 
       <main className="site-main">
