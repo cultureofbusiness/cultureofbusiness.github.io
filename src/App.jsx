@@ -11,9 +11,9 @@ export default function App() {
       <header className="site-header">
         <h1 className="site-title">Culture of Business</h1>
         <nav className="site-nav">
-          <Link to="/">Home</Link>
-          <Link to="/about">About Us</Link>
-          <Link to="/articles">Article List</Link>
+          <Link to="">Home</Link>
+          <Link to="about">About Us</Link>
+          <Link to="articles">Article List</Link>
         </nav>
       </header>
 
