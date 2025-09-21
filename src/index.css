@@ -9,9 +9,49 @@
     padding: 0 8px;
   }
   .header-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-    padding: 0 4px;
+    display: none;
+  }
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 0;
+    width: 100vw;
+    height: auto;
+    min-height: calc(100vh - 64px);
+  }
+  .intro {
+    position: static;
+    margin: 24px auto 0 auto;
+    padding: 18px 8px;
+    max-width: 95vw;
+    min-height: 80px;
+    font-size: 1.1rem;
+    border-radius: 32px;
+    width: 95vw;
+  }
+  .group-photo {
+    position: static;
+    margin: 24px auto 0 auto;
+    font-size: 1.1rem;
+    text-align: center;
+    left: unset;
+    top: unset;
+    width: 95vw;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .bio {
+    position: static;
+    margin: 24px auto 24px auto;
+    font-size: 1rem;
+    text-align: center;
+    left: unset;
+    top: unset;
+    width: 95vw;
   }
   .header-logo {
     height: 36px;
