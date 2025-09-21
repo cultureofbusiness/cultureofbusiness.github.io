@@ -1,3 +1,4 @@
+
 :root{
   --yellow: #f0c040;
   --text: #111;
@@ -60,4 +61,48 @@ body{
 .article-page, .about-page, .article-list-page{
   max-width:900px;
   margin:40px auto;
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 16px;
+  }
+  .site-title {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  .site-nav a {
+    margin-left: 0;
+    margin-right: 16px;
+    font-size: 18px;
+  }
+  .site-main {
+    padding: 16px;
+  }
+  .home-container {
+    display: block;
+  }
+  .intro {
+    font-size: 17px;
+    margin: 24px 0;
+    padding: 0 4px;
+  }
+  .articles-list {
+    margin: 32px 0 0 0;
+    padding: 0 4px;
+  }
+  .group-photo {
+    width: 100%;
+    max-width: 320px;
+    height: 80px;
+    margin: 32px auto 0;
+    font-size: 18px;
+  }
+  .article-page, .about-page, .article-list-page {
+    margin: 24px 0;
+    padding: 0 4px;
+    max-width: 100%;
+  }
 }
