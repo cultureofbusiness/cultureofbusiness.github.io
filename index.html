@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Culture of Business</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- React via CDN so no build step required -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script>
+      const e = React.createElement;
+
+      const Nav = () => e('nav', {className: 'nav'}, [
+        e('h1', {key: 'title', className: 'site-title'}, 'Culture of Business'),
+        e('ul', {key: 'links', className: 'nav-links'}, [
+          e('li', {key: 'home'}, e('a', {href: '#/'}, 'Home')),
+          e('li', {key: 'about'}, e('a', {href: '#/about'}, 'About Us')),
+          e('li', {key: 'articles'}, e('a', {href: '#/articles'}, 'Article List')),
+        ])
+      ]);
+
+      const Home = () => e('main', {className: 'home'}, [
+        e('section', {key: 'intro', className: 'intro'}, [
+          e('p', {key: 'p'}, `Welcome to Culture of Business, a monthly publication made by the titular club at Brooklyn Technical High School. We discuss different markets in New York City, creating informative and clear articles about them.`)
+        ]),
+        e('div', {key: 'group', className: 'group-image'}, ' '),
+      ]);
+
+      const About = () => e('main', {className: 'about'}, [
+        e('h2', {key: 'h2'}, 'About Us'),
+        e('p', {key: 'p'}, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.'),
+      ]);
+
+      const Article = ({month}) => e('article', {className: 'article'}, [
+        e('h3', {key: 'h3'}, month),
+        e('p', {key: 'p'}, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'),
+      ]);
+
+      const Articles = () => e('main', {className: 'articles'}, [
+        e('h2', {key: 'h2'}, 'Articles'),
+        e('aside', {key: 'list', className: 'article-list'}, [
+          e(Article, {key: 'apr', month: 'April'}),
+          e(Article, {key: 'may', month: 'May'}),
+          e(Article, {key: 'jun', month: 'June'}),
+          e(Article, {key: 'jul', month: 'July'}),
+          e(Article, {key: 'aug', month: 'August'}),
+        ])
+      ]);
+
+      function Router() {
+        const [route, setRoute] = React.useState(window.location.hash || '#/');
+
+        React.useEffect(() => {
+          const onHash = () => setRoute(window.location.hash || '#/');
+          window.addEventListener('hashchange', onHash);
+          return () => window.removeEventListener('hashchange', onHash);
+        }, []);
+
+        let view = null;
+        if (route.startsWith('#/about')) view = e(About);
+        else if (route.startsWith('#/articles')) view = e(Articles);
+        else view = e(Home);
+
+        return e('div', {className: 'app'}, [
+          e(Nav, {key: 'nav'}),
+          e('div', {key: 'view', className: 'view'}, view)
+        ]);
+      }
+
+      const domRoot = document.getElementById('root');
+      ReactDOM.createRoot(domRoot).render(e(Router));
+    </script>
+  </body>
+</html>
