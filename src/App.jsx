@@ -1,41 +1,35 @@
-import React, { useState } from 'react'
-import { Routes, Route, Link } from 'react-router-dom'
-import Home from './pages/Home'
-import About from './pages/About'
-import ArticleList from './pages/ArticleList'
-import Article from './pages/Article'
+
+
+import React from 'react';
+import cobLogo from '/cob-logo.png';
 
 export default function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
   return (
-  <div className="site" style={{ background: 'var(--soft-grey)' }}>
-      <header className="site-header a24-header">
-        <div className="a24-nav-left">
-          <button className="menu-btn" onClick={() => setMenuOpen(true)}>
-            <span className="menu-icon">&#9776;</span> MENU
-          </button>
+    <div className="site">
+      <header className="site-header">
+        <div className="header-flex">
+          <div className="header-col header-left">
+            <button className="menu-btn">
+              <span className="menu-icon">&#9776;</span>
+            </button>
+          </div>
+          <div className="header-col header-center">
+            <span className="header-title">Culture of Business</span>
+          </div>
+          <div className="header-col header-right">
+            <img src={cobLogo} alt="COB Logo" className="header-logo" />
+          </div>
         </div>
-        <div className="site-title a24-title">Culture of Business</div>
-        <div className="a24-header-right" />
       </header>
-
-      <div className={`menu-overlay${menuOpen ? ' open' : ''}`}> 
-        <button className="close-btn" onClick={() => setMenuOpen(false)}>&times;</button>
-        <nav className="menu-nav">
-          <Link to="" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link to="about" onClick={() => setMenuOpen(false)}>About Us</Link>
-          <Link to="articles" onClick={() => setMenuOpen(false)}>Article List</Link>
-        </nav>
-      </div>
-
       <main className="site-main">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/articles" element={<ArticleList />} />
-          <Route path="/articles/:slug" element={<Article />} />
-        </Routes>
+        <div className="home-container">
+          <section className="intro">
+            <p>August Issue Preview: Lorem Ipsum....</p>
+          </section>
+          <div className="group-photo">*group image*</div>
+          <div className="bio">brief bio...</div>
+        </div>
       </main>
     </div>
-  )
+  );
 }
