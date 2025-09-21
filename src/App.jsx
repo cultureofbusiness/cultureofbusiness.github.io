@@ -8,7 +8,7 @@ import Article from './pages/Article'
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <div className="site">
+  <div className="site" style={{ background: 'var(--soft-grey)' }}>
       <header className="site-header a24-header">
         <div className="a24-nav-left">
           <button className="menu-btn" onClick={() => setMenuOpen(true)}>
