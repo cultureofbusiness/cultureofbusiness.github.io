@@ -38,3 +38,25 @@ body {
 	text-align: center;
 	color: #000;
 }
+
+@media (max-width: 600px) {
+	.title {
+		font-size: 2.4rem;
+		margin-bottom: 0.45rem;
+	}
+	.subtitle {
+		font-size: 1.08rem;
+	}
+	.subtitle-link {
+		margin-top: 0.6rem;
+	}
+	.subtitle-link:first-of-type {
+		margin-top: 2rem;
+	}
+	.back-link {
+		margin-top: 2rem;
+	}
+	body {
+		padding: 0 0.5rem;
+	}
+}
