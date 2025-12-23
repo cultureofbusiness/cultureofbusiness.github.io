@@ -1,4 +1,18 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Env files (keep secrets out of git)
+.env
+.env.*
+
+# If you ever add a Node/Vite build step, keep these ignored
 node_modules/
 dist/
-.env
-.DS_Store
